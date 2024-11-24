@@ -5,7 +5,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 // Importing global styles from index.css
-import './index.css'
+import "./index.css";
 
 // Importing React Router components to handle routing
 import {
@@ -13,11 +13,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Root from './routes/root';
+
 // Creating a browser router with a simple route configuration
 const router = createBrowserRouter([
   {
     path: "/", // The root path of the application
-    element: <div>Hello world!</div>, // Rendering a simple "Hello world!" element for this route
+    element: <Root />, 
   },
 ]);
 

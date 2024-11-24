@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from '../components/navbar'
 
-export default function root() {
+export default function Root() {
   return (
-    <div>
-      
-    </div>
+    <>
+     <Navbar />
+    </>
   )
 }

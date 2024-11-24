@@ -14,12 +14,14 @@ import {
 } from "react-router-dom";
 
 import Root from './routes/root';
+import ErrorPage from './error-page'
 
 // Creating a browser router with a simple route configuration
 const router = createBrowserRouter([
   {
     path: "/", // The root path of the application
     element: <Root />, 
+    errorElement: <ErrorPage/>
   },
 ]);
 

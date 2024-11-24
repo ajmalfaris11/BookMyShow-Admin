@@ -7,9 +7,6 @@ import { createRoot } from 'react-dom/client'
 // Importing global styles from index.css
 import './index.css'
 
-// Importing the App component (although it's not being used in this code yet)
-import App from './App.jsx'
-
 // Importing React Router components to handle routing
 import {
   createBrowserRouter,

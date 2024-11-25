@@ -13,7 +13,7 @@ import AdMv from './routes/movie-routes/adMv';
 import Home from './routes/home';
 import DlMv from './routes/movie-routes/dlMv';
 import Movies from './routes/movie-routes/movies';
-import AllMovies from './routes/movie-routes/allMovie';
+import AllMovies, {loader as moviesLoader} from './routes/movie-routes/allMovie';
 
 // Creating a browser router with proper route configuration
 const router = createBrowserRouter([
@@ -34,7 +34,8 @@ const router = createBrowserRouter([
 
           {
             path: "/movies",
-            element: <AllMovies/>
+            element: <AllMovies/>,
+            loader: moviesLoader
           },
 
           {

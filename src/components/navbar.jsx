@@ -3,35 +3,35 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="bg-white text-black shadow-md rounded-lg">
-      <div className="px-4 py-4 flex justify-between items-center ">
+    <div className="bg-red-600 text-white shadow-md rounded-xl">
+      <div className="px-4 py-2 flex justify-between items-center ">
         {/* Logo */}
-        <div className="w-32">
-          <img src="https://hackerx.org/wp-content/uploads/job-manager-uploads/company_logo/2022/06/BMS-Logo-Grey.png" alt="" />
+        <div className="w-32 pt-2">
+          <img src="https://logodix.com/logo/2011021.png" alt=" logo img" />
         </div>
 
         {/* Navigation Links */}
-        <div className="flex space-x-6 font-semibold">
-          <Link to="/" className="hover:text-red-600">
-            Dashboard
+        <div className="flex space-x-6 font-medium">
+          <Link to="/" className="hover:underline">
+            dashboard
           </Link>
-          <Link to="/movies" className="hover:text-red-600">
-            Movies
+          <Link to="/movies" className="hover:underline">
+            movies
           </Link>
-          <Link to="/theaters" className="hover:text-red-600">
-            Theaters
+          <Link to="/theaters" className="hover:underline">
+            theaters
           </Link>
-          <Link to="/users" className="hover:text-red-600">
-            Users
+          <Link to="/users" className="hover:underline">
+            users
           </Link>
-          <Link to="/settings" className="hover:text-red-600">
-            Settings
+          <Link to="/settings" className="hover:underline">
+            settings
           </Link>
         </div>
 
         {/* Logout Button */}
         <div>
-          <button className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-md">
+          <button className="bg-white hover:bg-red-600 hover:border-white border-2 border-red-600 hover:text-white text-red-600 font-semibold  px-4 py-2 rounded-lg">
             Logout
           </button>
         </div>

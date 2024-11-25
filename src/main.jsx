@@ -1,34 +1,60 @@
-// Importing the StrictMode component from React to enable additional checks during development
-import { StrictMode } from 'react'
-
-// Importing createRoot method from 'react-dom/client' to render the root component
-import { createRoot } from 'react-dom/client'
-
-// Importing global styles from index.css
-import "./index.css";
-
 // Importing React Router components to handle routing
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import "./index.css";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
 import Root from './routes/root';
-import ErrorPage from './error-page'
+import ErrorPage from './error-page';
+import AdMv from './routes/movie-routes/adMv';
+import Home from './routes/home';
+import DlMv from './routes/movie-routes/dlMv';
+import Movies from './routes/movie-routes/movies';
+import AllMovies from './routes/movie-routes/allMovie';
 
-// Creating a browser router with a simple route configuration
+// Creating a browser router with proper route configuration
 const router = createBrowserRouter([
   {
     path: "/", // The root path of the application
-    element: <Root />, 
-    errorElement: <ErrorPage/>
+    element: <Root />,
+    errorElement: <ErrorPage />,
+
+    children: [
+      {
+        path: "/", // Root-level Home route
+        element: <Home />,
+      },
+      {
+        path: "/movies", // Parent route for adding movies
+        element: <Movies />,
+        children: [
+
+          {
+            path: "/movies",
+            element: <AllMovies/>
+          },
+
+          {
+            path: "/movies/admv", // Nested route under /add-movie
+            element: <AdMv />,
+          },
+
+          {
+            path: "/movies/dlMv", // Nested route under /add-movie
+            element: <DlMv />,
+          },
+        ],
+      },
+    ],
   },
 ]);
 
 // Rendering the application inside the root DOM element with the RouterProvider
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* Providing the router to the app via RouterProvider */}
     <RouterProvider router={router} />
-  </StrictMode>,
-)
+  </StrictMode>
+);

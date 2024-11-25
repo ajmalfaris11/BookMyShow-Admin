@@ -10,4 +10,13 @@ body {
   min-width: 320px;
   min-height: 100vh;
   box-sizing: border-box;
+  background-color: black;
 }
+
+
+/* Customize the scrollbar */
+::-webkit-scrollbar {
+  width: 0px; /* width for vertical scrollbar */
+  height: 12px; /* height for horizontal scrollbar */
+}
+
